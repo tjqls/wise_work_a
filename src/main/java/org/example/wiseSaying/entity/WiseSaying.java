@@ -19,4 +19,12 @@ public class WiseSaying {
     public String getAuthor(){
         return this.author;
     }
+
+    public void setContent(String content) {
+    }
+
+    public void setAuthor(String author){
+
+    }
+
 }
