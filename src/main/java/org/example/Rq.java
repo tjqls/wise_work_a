@@ -15,10 +15,9 @@ public class Rq {
         this.actionCode = commandBits[0];                                 // 문자 actionCode는 commandBits의 인덱스 0번이다.
 
         if(commandBits.length == 1) return;
-        HashMap<String , String> params = new HashMap<>();                // HashMap params 선언 문자열과 문자열로 받을것.
+        params = new HashMap<>();                // HashMap params 선언 문자열과 문자열로 받을것.
         String[] paramsBits = commandBits[1].split("&");            // 문자열 paramsBits는 commandBits 인덱스 1번을 &를 기준으로 나눈다.
 
-        params = new HashMap<>();
 
         for(String paramStr : paramsBits){                                 //향산된 for문 paramsBits를 문자 paramStr 변수로 반복시킨다.
             String[] paramsStrBits = paramStr.split("=",2);   // 변수 parStr에 있는 문자열에 =을 기준으로 두개로 나눈다.
@@ -38,7 +37,8 @@ public class Rq {
     }
 
     public String getParams(String name) {
-        return params.get(name);
+            return params.get(name);
+
     }
 
     public int getIntParam(String name, int defaultValue){
